@@ -1,0 +1,108 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+		<title>Canciones</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">		
+        <link rel="stylesheet" href="../css/normalize.min.css">
+        <link rel="stylesheet" href="../css/main.css">		
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" href="../css/playlist.css">
+		<script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="../js/menu.js"></script>		
+		
+		<script src="../js/lab4/playlist.js"></script>	
+		<script src="../js/lab4/playlist_store.js"></script>
+		
+	</head>
+    <body>
+		<div id="container">
+			<header id="main">
+				<h1>Laboratorio 4  PHP y MySQL</h1>
+			</header>
+			<nav></nav>
+			</br></br><h2>Playlist PHP y MySQL</h2>
+			
+			<h3>Seleccione un artista para mostrar sus canciones</h3>
+			<table style="border:none !important; padding:0;">
+				<tr>
+					<td><div id="artistDiv"></div></td>
+					<td style="padding-left:5px"><button id="addArtistBtn" href="#">Agregar Artista</button></td>
+				</tr>
+			</table>
+			
+			</br><div id="addArtistDiv" title="Agregar Artista" style="display:none">
+				<form id="frmAddArtist" method= "post" action="../php/lab4/agregarArtista.php">
+					<label>Ingrese el nombre y apellidos del artista que desea agregar</label></br></br>
+					<table>
+						<tr><td style="padding:2px"><label for="nombre">Nombre</label></td><td><input type="text" id="nombre" name= "nombre" required></td></tr>
+						<tr><td style="padding:2px"><label for="apellido1">Primer Apellido</label></td><td><input type="text" id="apellido1" name= "apellido1" required></td></tr>
+						<tr><td style="padding:2px"><label for="apellido2">Segundo Apellido</label></td><td><input type="text" id="apellido2" name= "apellido2"></td></tr>
+					</table>								
+					<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+						<div class="ui-dialog-buttonset">
+							<button id="addArtist" name= "submit" type="submit" class="ui-button ui-corner-all ui-widget">Guardar</button>
+							<button id="cancelAddArtist" type="button" class="ui-button ui-corner-all ui-widget">Cancelar</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div id="songsTbl" style="display:none">
+				<div id="songsDiv"></div></br>
+				<button id="addSongBtn" style="float:right">Agregar Cancion</button></br>
+			</div>
+			<div id="addSongDiv" title="Agregar Cancion" style="display:none">
+				<form id="frmAddSong" method= "post" action="../php/lab4/agregarCancion.php">
+					<label>Ingrese los datos de la canción que desea agregar</label></br></br>
+					<table>
+						<tr><td style="padding:2px"><label for="artistDiv2">Artista</label></td><td><div id="artistDiv2"></div></td></tr>
+						<tr><td style="padding:2px"><label for="titulo">Titulo</label></td><td><input type="text" id="titulo" name= "titulo" required></td></tr>
+						<tr><td style="padding:2px"><label for="genero">G&eacute;nero</label></td><td><input type="text" id="genero" name= "genero" required></td></tr>
+					</table>								
+					<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+						<div class="ui-dialog-buttonset">
+							<button id="addArtist" name= "submit" type="submit" class="ui-button ui-corner-all ui-widget">Guardar</button>
+							<button id="cancelAddArtist" type="button" class="ui-button ui-corner-all ui-widget">Cancelar</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			
+			<h3>Playlists</h3>
+			
+			<label>Seleccione el nombre de una canción y presiona Agregar Canción para agregarla al playlist</label></br></br>
+			<table style="border:none !important; padding:0;">
+				<tr>
+					<td><div id="songsCbx"></div></td>
+					<td style="padding-left:5px"><button id="addSongToPlaylistBtn">Agregar Cancion</button></td>
+				</tr>
+			</table>			
+			
+			<ul id="playlist">
+				
+			</ul>	
+			<button id="showSavePlaylistButton" style="float:right">Guardar Playlist</button></br>
+			
+		</div>	
+		<div id="savePlDiv" style="display:none" title="Guardar Playlist">
+			<form>
+				<label>Digite un nombre para el playlist:</label></br></br>
+				<input type="text" id="playlistnametxt" name= "playlistnametxt" required>
+				<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+					<div class="ui-dialog-buttonset">
+						<button id="savePlaylistBtn" name= "submit"  class="ui-button ui-corner-all ui-widget">Guardar</button>
+						<button id="cancelAddArtist" type="button" class="ui-button ui-corner-all ui-widget">Cancelar</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<footer>Copyright &copy; 2017, Lab IV PHP y MySQL</footer>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!Doctype>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		
+		<script>
+			
+			
+			
+			$(function(){
+				$("#btn1").click(function(){
+					$("#div1").fadeIn();
+					$("#div2").fadeIn("slow");
+					$("#div3").fadeIn(4000);
+				});
+				
+				$("#btn2").click(function(){
+					$("p").hide("slow",function(){
+						alert("el parrafo está escondido");
+					});
+					
+				});
+				
+			});
+				
+			</script>
+		</head>
+		<body>
+			<p>Demostrar efecto Fade In</p>
+			<button id="btn1">Click FadeIn</button>	
+			<br>
+			
+			<div id="div1" style="width:80px;height:80px;display:none;background-color:yellow;"></div><br>
+			<div id="div2" style="width:80px;height:80px;display:none;background-color:blue;"></div><br>
+			<div id="div3" style="width:80px;height:80px;display:none;background-color:black;"></div><br>
+			
+			<button id="btn2">Esconder</button>	
+			<p>Esto es un parrafo</p>
+		</body>
+	</html>				

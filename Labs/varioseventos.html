@@ -1,0 +1,26 @@
+<!Doctype>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				$("p").on({
+					mouseenter: function(){
+						$(this).css("background-color","red");
+					},
+					mouseleave:function(){
+						$(this).css("background-color","blue");
+					},
+					click:function(){
+						$(this).css("background-color","green");
+					}}
+					)
+			});
+			
+		</script>
+	</head>
+	<body>
+		<p>click o mover el mouse sobre este parrafo</p>		
+	</body>
+</html>			
